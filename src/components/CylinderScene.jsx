@@ -63,9 +63,9 @@ function CylinderGroup({ onSelect, onFocusChange, scrollElRef }) {
     snapTo(idx);
     // Brief camera punch-in → then open detail
     gsap.to(camera.position, {
-      z: 3.5, duration: 0.5, ease: "power2.inOut",
+      z: 5.6, duration: 0.5, ease: "power2.inOut",
       onComplete: () => {
-        gsap.to(camera.position, { z: 5.5, duration: 0.45, ease: "power2.out" });
+        gsap.to(camera.position, { z: 7.8, duration: 0.45, ease: "power2.out" });
         onSelect(section);
       },
     });
@@ -156,7 +156,7 @@ function NavArrows({ scrollRef }) {
 }
 
 // ─── Main exported CylinderScene ──────────────────────────────────────────────
-export function CylinderScene({ onSelect }) {
+export function CylinderScene({ onSelect, onBack }) {
   const scrollRef   = useRef();
   const [focused, setFocused] = useState(0);
   const [active, setActive]   = useState(0);
@@ -176,7 +176,47 @@ export function CylinderScene({ onSelect }) {
   const SCROLL_TOTAL = N * 600; // total scrollable px
 
   return (
-    <div style={{ position: "relative", width: "100vw", height: "100vh", paddingTop: 64 }}>
+    <div style={{ position: "relative", width: "100vw", height: "100vh", paddingTop: 64, background: "#050810", overflow: "hidden" }}>
+      {onBack && (
+        <button
+          type="button"
+          onClick={onBack}
+          style={{
+            position: "absolute",
+            top: 24,
+            left: 28,
+            padding: "10px 22px",
+            background: "rgba(10, 16, 28, 0.85)",
+            border: "1px solid rgba(255, 255, 255, 0.18)",
+            color: "rgba(255, 255, 255, 0.85)",
+            borderRadius: 30,
+            cursor: "pointer",
+            fontFamily: "var(--font-display), sans-serif",
+            fontSize: 12,
+            fontWeight: 600,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            backdropFilter: "blur(12px)",
+            zIndex: 100,
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+            transition: "all 0.2s ease",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderColor = "#38bdf8";
+            e.currentTarget.style.color = "#ffffff";
+            e.currentTarget.style.boxShadow = "0 0 16px rgba(56,189,248,0.3)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.18)";
+            e.currentTarget.style.color = "rgba(255, 255, 255, 0.85)";
+            e.currentTarget.style.boxShadow = "none";
+          }}
+        >
+          <span>←</span> BACK TO THE NEXUS
+        </button>
+      )}
 
       {/* ── Invisible scroll driver ─────────────────────────────────────── */}
       <div
@@ -201,7 +241,7 @@ export function CylinderScene({ onSelect }) {
           gl={{ antialias: true, alpha: false, powerPreference: "high-performance" }}
           style={{ background: "transparent" }}
         >
-          <PerspectiveCamera makeDefault position={[0, 0, 5.5]} fov={60} near={0.1} far={100} />
+          <PerspectiveCamera makeDefault position={[0, 0.2, 7.8]} fov={55} near={0.1} far={100} />
           <SceneEnvironment />
           <CylinderGroup
             onSelect={onSelect}

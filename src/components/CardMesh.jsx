@@ -57,8 +57,7 @@ export function CardMesh({ section, position, rotationY, isFocused, onClick, ind
       ref={groupRef}
       position={position}
       rotation={[0, rotationY, 0]}
-    >
-      {/* ── 3D backing plane — gives real depth to the card ── */}
+      {/* ── 3D backing plane — subtle depth glow ── */}
       <mesh
         ref={meshRef}
         onPointerOver={() => setHovered(true)}
@@ -67,9 +66,9 @@ export function CardMesh({ section, position, rotationY, isFocused, onClick, ind
       >
         <planeGeometry args={[W, H, 1, 1]} />
         <meshBasicMaterial
-          color={new THREE.Color(section.gradient[1]).multiplyScalar(2)}
+          color={new THREE.Color(section.gradient[1])}
           transparent
-          opacity={1}
+          opacity={0.15}
           depthWrite={false}
           side={THREE.FrontSide}
         />
@@ -78,31 +77,30 @@ export function CardMesh({ section, position, rotationY, isFocused, onClick, ind
       {/* ── HTML card overlay ── */}
       <Html
         transform
+        center
+        distanceFactor={3.2}
         occlude={false}
         style={{ pointerEvents: "auto" }}
-        position={[0, 0, 0.01]}
+        position={[0, 0, 0.05]}
       >
         <div
           onClick={onClick}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
           style={{
-            width: 260,
-            height: 360,
+            width: 280,
+            height: 390,
             background: grad,
-            borderRadius: 16,
-            border: `1px solid ${isFocused ? section.accentColor + "88" : "rgba(255,255,255,0.08)"}`,
+            borderRadius: 18,
+            border: `1px solid ${isFocused ? section.accentColor + "aa" : "rgba(255,255,255,0.12)"}`,
             boxShadow: isFocused
-              ? `0 0 60px ${section.accentColor}33, 0 30px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.12)`
-              : "0 20px 40px rgba(0,0,0,0.5)",
-            backdropFilter: "blur(12px)",
+              ? `0 0 50px ${section.accentColor}44, 0 25px 50px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.15)`
+              : "0 15px 35px rgba(0,0,0,0.5)",
+            backdropFilter: "blur(14px)",
             overflow: "hidden",
             position: "relative",
             cursor: "pointer",
             transition: "border-color 0.3s, box-shadow 0.3s",
-            // Scale down to match Three.js units (Html transform scales 1px = 1 three-unit)
-            transform: "scale(0.0072)",
-            transformOrigin: "center center",
             userSelect: "none",
           }}
         >

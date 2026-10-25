@@ -7,10 +7,10 @@ import HackathonGallery from "./Sliding";
 import { Background } from "./Background";
 import { AnimatePresence, motion } from "framer-motion";
 
-export function SelectionScene({ onOpenHackathons, onOpenProjects }) {
-  const { selected } = useScene();
+export function SelectionScene({ onOpenHackathons, onOpenProjects, onOpenResearch, onOpenExperience }) {
+  const { selected, select } = useScene();
   const promptRef = useRef();
-  const [scrollStep, setScrollStep] = useState(0); // 0: Heading, 1: Cards, 2: Sliding Gallery
+  const [scrollStep, setScrollStep] = useState(0); // 0: Heading, 1: Cards
 
   useEffect(() => {
     if (selected) return;
@@ -21,34 +21,37 @@ export function SelectionScene({ onOpenHackathons, onOpenProjects }) {
     // Small delay on mount before accepting the first scroll, just to be safe
     const mountTimeout = setTimeout(() => {
       isLocked = false;
-    }, 1000);
+    }, 600);
     isLocked = true;
 
     const handleWheel = (e) => {
       if (isLocked) return;
 
-      if (e.deltaY > 50) {
+      if (e.deltaY > 30) {
         setScrollStep(s => {
-          if (s === 2) return s; // Gallery handles its own scroll and completion
-          if (s < 2) {
+          if (s === 0) {
             isLocked = true;
             clearTimeout(lockTimeout);
-            lockTimeout = setTimeout(() => { isLocked = false; }, 1200); // 1.2s lock between steps
-            return s + 1;
+            lockTimeout = setTimeout(() => { isLocked = false; }, 250);
+            return 1;
+          }
+          if (s >= 1) {
+            // User keeps scrolling down past MEET THE DEVELOPER!
+            // Directly trigger the 4 models, skipping the info card!
+            isLocked = true;
+            clearTimeout(lockTimeout);
+            lockTimeout = setTimeout(() => { isLocked = false; }, 350);
+            select("sanket", { skipInfoCard: true });
+            return s;
           }
           return s;
         });
-      } else if (e.deltaY < -50) {
+      } else if (e.deltaY < -30) {
         setScrollStep(s => {
-          if (s === 2) {
-            // Do NOT allow scroll up to exit the gallery to prevent accidental closing.
-            // The user must click the 'Back to Avatars' button.
-            return s;
-          }
           if (s > 0) {
             isLocked = true;
             clearTimeout(lockTimeout);
-            lockTimeout = setTimeout(() => { isLocked = false; }, 1200);
+            lockTimeout = setTimeout(() => { isLocked = false; }, 250);
             return s - 1;
           }
           return s;
@@ -56,13 +59,31 @@ export function SelectionScene({ onOpenHackathons, onOpenProjects }) {
       }
     };
 
+    let touchStartY = 0;
+    const handleTouchStart = (e) => {
+      touchStartY = e.touches[0].clientY;
+    };
+    const handleTouchEnd = (e) => {
+      const delta = touchStartY - e.changedTouches[0].clientY;
+      if (delta > 40) {
+        if (scrollStep === 0) setScrollStep(1);
+        else select("sanket", { skipInfoCard: true });
+      } else if (delta < -40) {
+        if (scrollStep > 0) setScrollStep(s => s - 1);
+      }
+    };
+
     window.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchend", handleTouchEnd, { passive: true });
     return () => {
       clearTimeout(mountTimeout);
       clearTimeout(lockTimeout);
       window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchend", handleTouchEnd);
     };
-  }, [selected]);
+  }, [selected, scrollStep, select]);
 
   useEffect(() => {
     if (!promptRef.current) return;
@@ -87,18 +108,39 @@ export function SelectionScene({ onOpenHackathons, onOpenProjects }) {
       <Background />
 
 
-      {/* ── Main Views ─────────────────────────── */}
+      {/* ── 3D Nexus View: ALWAYS MOUNTED (WARM WEBGL CONTEXT & ZERO JANK) ── */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 10,
+          pointerEvents: selected ? "auto" : "none",
+          opacity: selected ? 1 : 0,
+          visibility: selected ? "visible" : "hidden",
+          transition: "opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s",
+        }}
+      >
+        <DetailView
+          onOpenHackathons={onOpenHackathons}
+          onOpenProjects={onOpenProjects}
+          onOpenResearch={onOpenResearch}
+          onOpenExperience={onOpenExperience}
+        />
+      </div>
+
+      {/* ── Selection View (Meet the Developer) ── */}
       <AnimatePresence>
-        {!selected ? (
+        {!selected && (
           <motion.div
             key="selection-view"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.05 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0, scale: 0.96 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             style={{
               position: "absolute",
               inset: 0,
+              zIndex: 20,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
@@ -123,7 +165,7 @@ export function SelectionScene({ onOpenHackathons, onOpenProjects }) {
                 lineHeight: 1
               }}
             >
-              MEET THE DEVELOPERS
+              MEET THE DEVELOPER
             </motion.h1>
 
             <motion.div 
@@ -142,52 +184,17 @@ export function SelectionScene({ onOpenHackathons, onOpenProjects }) {
               ))}
             </motion.div>
           </motion.div>
-        ) : (
-          <motion.div
-            key="detail-view"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.8 }}
-            style={{ position: "absolute", inset: 0, zIndex: 10 }}
-          >
-            <DetailView />
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <AnimatePresence>
-        {scrollStep === 2 && !selected && (
-          <motion.div
-            key="sliding-gallery"
-            initial={{ opacity: 0, y: "100%" }}
-            animate={{ opacity: 1, y: "0%" }}
-            exit={{ opacity: 0, y: "100%" }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            style={{ position: "absolute", inset: 0, zIndex: 50, background: "#080808" }}
-          >
-            {/* Adding a simple close button in case they want to go back to the avatars explicitly */}
-            <button
-              onClick={() => setScrollStep(1)}
-              style={{
-                position: "absolute", top: 24, right: 24, zIndex: 100,
-                background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)",
-                color: "#fff", padding: "8px 16px", borderRadius: 20, cursor: "pointer",
-                fontFamily: "'JetBrains Mono', monospace", fontSize: 12
-              }}
-            >
-              Back to Avatars
-            </button>
-            <HackathonGallery onCompleteScroll={onOpenProjects} />
-          </motion.div>
         )}
       </AnimatePresence>
 
       {/* ── Bottom prompt ──────────────────────────── */}
-      {!selected && scrollStep < 2 && (
+      {!selected && (
         <div
           ref={promptRef}
-          onClick={() => setScrollStep(s => Math.min(s + 1, 2))}
+          onClick={() => {
+            if (scrollStep === 0) setScrollStep(1);
+            else select("sanket", { skipInfoCard: true });
+          }}
           style={{
             position: "absolute",
             bottom: 28,
@@ -204,13 +211,13 @@ export function SelectionScene({ onOpenHackathons, onOpenProjects }) {
           <p style={{
             fontFamily: "var(--font-body)",
             fontSize: 11,
-            letterSpacing: "0.35em",
+            letterSpacing: "0.28em",
             textTransform: "uppercase",
-            color: "rgba(255,255,255,0.22)",
+            color: "rgba(255,255,255,0.4)",
             textAlign: "center",
             lineHeight: 1.6
           }}>
-            {scrollStep === 0 ? "Scroll down for profiles" : "Select a profile or scroll down"}
+            {scrollStep === 0 ? "Scroll down to Meet Developer" : "Scroll down to unpack 3D Nexus"}
           </p>
           <ChevronDown />
         </div>

@@ -138,32 +138,211 @@ const HACKATHONS = [
     color: "#d4a8ff",
     gradient: ["#0e0018", "#1a0030"],
     accentRGB: "212,168,255",
-    photo: "public\\photos\\BPRD.jpeg",
+    photo: "/photos/BPRD.jpeg",
   },
-  ...Array.from({ length: 7 }).map((_, i) => ({
-    id: i + 5,
-    name: `UPCOMING HACKATHON 0${i + 1}`,
-    edition: "2025",
-    location: "TBD | INDIA",
+  {
+    id: 5,
+    name: "KAYA AI HACKATHON",
+    edition: "2026",
+    location: "GLOBAL | VIRTUAL / INTERNATIONAL",
     duration: "48 hrs",
-    teamSize: 4,
-    rank: "TBD",
-    badge: "⏳",
-    tier: "participant",
-    category: "Open Innovation",
-    project: "To Be Determined",
-    projectDesc: "A placeholder for future hackathon achievements.",
-    whatWeBuilt: ["To be built", "To be deployed"],
-    challenges: "Future challenges await.",
-    prize: "TBD",
-    organizedBy: "TBD",
-    tech: ["Future", "Tech", "Stack"],
+    teamSize: 3,
+    rank: "4th Place",
+    badge: "🏅",
+    tier: "finalist",
+    category: "Agentic AI / Procurement Intelligence",
+    project: "AI Procurement Intelligence",
+    projectDesc: "An AI-powered procurement system that helps verify claims, identify risks, and support smarter purchasing decisions.",
+    whatWeBuilt: [
+      "Evidence-based procurement claim verification engine",
+      "Living Belief Graph linking claims, contracts, vendors & dependencies",
+      "Automated 3-way match & discrepancy detection algorithms",
+      "Human-in-the-loop audit workspace with explainable risk scoring"
+    ],
+    challenges: "Connecting fragmented ERP records and invoice PDFs into traceable, explainable belief graphs without black-box hallucination.",
+    prize: "Finalist Award",
+    organizedBy: "Kaya AI International",
+    tech: ["FastAPI", "Neo4j", "React", "Pydantic", "Python"],
     participants: 500,
-    color: "#888888",
-    gradient: ["#111111", "#222222"],
-    accentRGB: "136,136,136",
-    photo: "/photos/placeholder.jpg",
-  }))
+    color: "#fbbf24",
+    gradient: ["#1c1404", "#2e2106"],
+    accentRGB: "251,191,36",
+    photo: "/photos/BPRD.jpeg",
+  },
+  {
+    id: 6,
+    name: "HACK BETTER THAN ME (HBTM)",
+    edition: "2026",
+    location: "PUNE, INDIA | IIIT PUNE",
+    duration: "24 hrs",
+    teamSize: 3,
+    rank: "7th Place",
+    badge: "🏅",
+    tier: "finalist",
+    category: "Agentic AI / Applied Intelligence",
+    project: "IMBTM",
+    projectDesc: "An intelligent multi-agent system built at IIIT Pune exploring autonomous task execution and agentic problem-solving.",
+    whatWeBuilt: [
+      "Multi-agent autonomous coordination pipeline",
+      "Real-time reasoning graph with sub-task delegation",
+      "Contextual knowledge retrieval and synthesis engine",
+      "Interactive command dashboard with human approval gates"
+    ],
+    challenges: "Managing agent consensus drift and coordinating asynchronous execution under strict 24-hour hackathon constraints.",
+    prize: "Top 10 Finalist",
+    organizedBy: "IABTM × IIIT Pune",
+    tech: ["LangChain", "Python", "FastAPI", "React", "Vector DB"],
+    participants: 350,
+    color: "#38bdf8",
+    gradient: ["#001124", "#00203d"],
+    accentRGB: "56,189,248",
+    photo: "/photos/hackverse.jpg",
+  },
+  {
+    id: 7,
+    name: "TI FORGE OF TITANIUM",
+    edition: "2025",
+    location: "CHENNAI, INDIA | RAJALAKSHMI ENGINEERING COLLEGE (REC)",
+    duration: "36 hrs",
+    teamSize: 4,
+    rank: "1st Place — Winner",
+    badge: "🏆",
+    tier: "winner",
+    category: "Disaster Response / IoT & BLE",
+    project: "ResQLink",
+    projectDesc: "A disaster-response coordination platform combining offline communication and intelligent rescue logistics.",
+    whatWeBuilt: [
+      "Ad-hoc offline BLE mesh relay bypassing damaged cellular infrastructure",
+      "Living disaster map plotting dynamic hazards and safe detour routes",
+      "Emergency triage prioritization queue sorting casualty reports",
+      "Low-power peripheral/central radio synchronization state machine"
+    ],
+    challenges: "Achieving reliable peer-to-peer radio synchronization under 20-byte BLE MTU constraints during simulated blackouts.",
+    prize: "1st Place Winner Trophy",
+    organizedBy: "Rajalakshmi Engineering College (REC), Chennai",
+    tech: ["Flutter", "BLE 5.0", "OpenStreetMap", "Dart", "SQLite"],
+    participants: 300,
+    color: "#c9a84c",
+    gradient: ["#1a1200", "#2e2000"],
+    accentRGB: "201,168,76",
+    photo: "/photos/nexothon.jpeg",
+  },
+  {
+    id: 8,
+    name: "DEV WITH AI",
+    edition: "2025",
+    location: "PUNE, INDIA | BHARATI VIDYAPEETH",
+    duration: "24 hrs",
+    teamSize: 3,
+    rank: "Top 10 Finalist",
+    badge: "🏅",
+    tier: "finalist",
+    category: "Healthcare AI / Digital Health",
+    project: "Arogya Mitra",
+    projectDesc: "An AI-assisted medication adherence companion designed to help users manage their medication routines.",
+    whatWeBuilt: [
+      "Personalized medication scheduling & reminder workflow",
+      "Bilingual patient interface with visual pill verification",
+      "Healthcare-focused intake assistant with symptom journaling",
+      "Local-first encrypted health datastore with adherence telemetry"
+    ],
+    challenges: "Designing an intuitive UI accessible for elderly patients with low digital literacy while maintaining strict data privacy.",
+    prize: "Top 10 Finalist (70 Teams)",
+    organizedBy: "Bharati Vidyapeeth College of Engineering",
+    tech: ["React", "Node.js", "MongoDB", "Express", "Tailwind"],
+    participants: 280,
+    color: "#34d399",
+    gradient: ["#001a10", "#003320"],
+    accentRGB: "52,211,153",
+    photo: "/photos/HackCelestial.jpg",
+  },
+  {
+    id: 9,
+    name: "HACKORBIT",
+    edition: "2025",
+    location: "GWALIOR, INDIA | MITS GWALIOR",
+    duration: "24 hrs",
+    teamSize: 4,
+    rank: "Finalist",
+    badge: "🏅",
+    tier: "finalist",
+    category: "Open Innovation / AI Systems",
+    project: "OrbitSense Autonomous Pipeline",
+    projectDesc: "An autonomous situational intelligence platform delivering decentralized data processing and rapid telemetry routing.",
+    whatWeBuilt: [
+      "Decentralized event ingestion pipeline with zero-cloud dependencies",
+      "Interactive spatial map rendering live geo-tagged telemetry",
+      "Automated priority queue routing critical emergency alerts",
+      "Cross-platform responsive dashboard with offline persistence"
+    ],
+    challenges: "Building fault-tolerant data pipelines that remain operational during synthetic network dropouts.",
+    prize: "Finalist Recognition",
+    organizedBy: "Madhav Institute of Technology & Science",
+    tech: ["Python", "FastAPI", "React", "WebSockets", "SQLite"],
+    participants: 250,
+    color: "#a78bfa",
+    gradient: ["#110926", "#201247"],
+    accentRGB: "167,139,250",
+    photo: "/photos/hackverse.jpg",
+  },
+  {
+    id: 10,
+    name: "IDEA HACKATHON",
+    edition: "2024",
+    location: "MUMBAI, INDIA | K.J. SOMAIYA COLLEGE OF ENGINEERING",
+    duration: "24 hrs",
+    teamSize: 3,
+    rank: "Innovative Idea Finalist",
+    badge: "💡",
+    tier: "finalist",
+    category: "Sustainable Tech / Circular Innovation",
+    project: "ReClaim Circular Exchange",
+    projectDesc: "A circular-economy framework transforming campus material waste into discoverable inventory via digital material passports.",
+    whatWeBuilt: [
+      "Digital material passport schema cataloging discarded campus assets",
+      "Algorithmic requisition matching engine for student workshops",
+      "Innovation Readiness Score evaluating circular reuse potential",
+      "Interactive campus asset exchange and provenance tracking deck"
+    ],
+    challenges: "Formulating a multi-attribute scoring model to quantify embodied carbon savings for heterogeneous physical assets.",
+    prize: "Finalist Recognition",
+    organizedBy: "K.J. Somaiya College of Engineering, Mumbai",
+    tech: ["React", "Node.js", "PostgreSQL", "LCA Data", "Tailwind"],
+    participants: 200,
+    color: "#66E3C1",
+    gradient: ["#041a14", "#0a3328"],
+    accentRGB: "102,227,193",
+    photo: "/photos/HackCelestial.jpg",
+  },
+  {
+    id: 11,
+    name: "BYTEVERSE",
+    edition: "NIT PATNA",
+    location: "PATNA, INDIA | NIT PATNA",
+    duration: "36 hrs",
+    teamSize: 3,
+    rank: "Participant / Finalist",
+    badge: "⚡",
+    tier: "finalist",
+    category: "AI / CareerTech",
+    project: "Interview Ace Pro",
+    projectDesc: "An AI-powered interview preparation platform designed to help candidates practise interviews and improve their readiness.",
+    whatWeBuilt: [
+      "Adaptive role-specific interview simulation workflow",
+      "STAR methodology answer rubric & scoring engine",
+      "Voice-to-text response ingestion with real-time feedback",
+      "Candidate readiness dashboard and improvement telemetry"
+    ],
+    challenges: "Evaluating subjective interview answer quality and structuring real-time feedback within low-latency speech loops.",
+    prize: "Finalist / Event Recognition",
+    organizedBy: "National Institute of Technology (NIT) Patna",
+    tech: ["React", "Python", "FastAPI", "Speech-to-Text"],
+    participants: 400,
+    color: "#7DD3FC",
+    gradient: ["#001726", "#002b47"],
+    accentRGB: "125,211,252",
+    photo: "/photos/nexothon.jpeg",
+  }
 ];
 
 // ─────────────────────────────────────────────────────────
@@ -901,7 +1080,7 @@ function FilterBar({ active, onChange }) {
 // ─────────────────────────────────────────────────────────
 //  MAIN GALLERY
 // ─────────────────────────────────────────────────────────
-export default function HackathonGallery({ onCompleteScroll }) {
+export default function HackathonGallery({ onCompleteScroll, onBack }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [filter, setFilter] = useState("all");
   const [modalHack, setModalHack] = useState(null);
@@ -978,6 +1157,48 @@ export default function HackathonGallery({ onCompleteScroll }) {
           userSelect: "none",
         }}
       >
+        {/* ── BACK BUTTON ── */}
+        {onBack && (
+          <button
+            type="button"
+            onClick={onBack}
+            style={{
+              position: "fixed",
+              top: 56,
+              left: 24,
+              zIndex: 400,
+              padding: "10px 22px",
+              background: "rgba(10, 16, 28, 0.85)",
+              border: "1px solid rgba(255, 255, 255, 0.18)",
+              color: "rgba(255, 255, 255, 0.85)",
+              borderRadius: 30,
+              cursor: "pointer",
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: 11,
+              fontWeight: 600,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              backdropFilter: "blur(12px)",
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+              transition: "all 0.2s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = "#ffb347";
+              e.currentTarget.style.color = "#ffffff";
+              e.currentTarget.style.boxShadow = "0 0 16px rgba(255,179,71,0.35)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.18)";
+              e.currentTarget.style.color = "rgba(255, 255, 255, 0.85)";
+              e.currentTarget.style.boxShadow = "none";
+            }}
+          >
+            <span>←</span> BACK TO THE NEXUS
+          </button>
+        )}
+
         {/* Ambient bg blobs */}
         {activeHack && (
           <motion.div

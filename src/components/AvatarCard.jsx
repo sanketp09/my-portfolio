@@ -9,7 +9,7 @@ export function AvatarCard({ avatar }) {
   return (
     <motion.div
       layoutId={`card-container-${avatar.id}`}
-      onClick={() => select(avatar.id)}
+      onClick={() => select(avatar.id, { skipInfoCard: true })}
       style={{
         width: "min(340px, 42vw)",
         height: "520px",

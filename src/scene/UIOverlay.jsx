@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import { AVATARS, useScene } from './SceneContext'
+import { AVATARS, useScene } from '../context/SceneContext'
 import { useThemeColors } from './useThemeColors'
 
 
