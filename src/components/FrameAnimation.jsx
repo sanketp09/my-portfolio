@@ -164,41 +164,73 @@ export default function FrameAnimation({ totalFrames = 240, onComplete, onRevers
       try {
         setLoadError('')
         const images = new Array(totalFrames)
-        let decodedCount = 0
+        let loadedCount = 0
 
-        for (let i = 1; i <= totalFrames; i += 1) {
-          const img = new Image()
-          const src = frameUrl(i)
+        // Step 1: Immediately fetch and display frame 1 so screen is never blank
+        const firstImg = new Image()
+        firstImg.src = frameUrl(1)
+        await new Promise((resolve) => {
+          firstImg.onload = () => resolve()
+          firstImg.onerror = () => resolve()
+        })
 
-          // Always wait for the image to load first (reliable progress updates).
-          await new Promise((resolve, reject) => {
-            img.onload = () => resolve()
-            img.onerror = () => reject(new Error(`Failed to load frame: ${src}`))
+        if (isCancelled) return
+        images[0] = firstImg
+        imagesRef.current = images
+        loadedCount = 1
+        setLoadingProgress(Math.round((loadedCount / totalFrames) * 100))
+        targetFrameRef.current = 0
+        drawFrame(0)
+
+        // Step 2: High-speed parallel concurrent pool (16 concurrent streams)
+        const CONCURRENCY = 16
+        let nextFrameIndex = 2 // 1-based, from frame 2 to totalFrames
+
+        const loadFrame = (index1Based) => {
+          return new Promise((resolve) => {
+            const img = new Image()
+            const src = frameUrl(index1Based)
+            img.onload = async () => {
+              if (isCancelled) return resolve()
+              try {
+                if (img.decode) await img.decode()
+              } catch {
+                // ignore decode errors
+              }
+              images[index1Based - 1] = img
+              loadedCount += 1
+              setLoadingProgress(Math.round((loadedCount / totalFrames) * 100))
+              resolve()
+            }
+            img.onerror = () => {
+              if (isCancelled) return resolve()
+              // Fallback to previous frame to prevent gaps
+              images[index1Based - 1] = images[index1Based - 2] || firstImg
+              loadedCount += 1
+              setLoadingProgress(Math.round((loadedCount / totalFrames) * 100))
+              resolve()
+            }
             img.src = src
           })
-
-          // Then try to fully decode (best effort).
-          try {
-            if (img.decode) {
-              await img.decode()
-            }
-          } catch {
-            // ignore decode errors
-          }
-
-          if (isCancelled) return
-
-          images[i - 1] = img
-          decodedCount += 1
-          setLoadingProgress(Math.round((decodedCount / totalFrames) * 100))
         }
+
+        const worker = async () => {
+          while (nextFrameIndex <= totalFrames) {
+            if (isCancelled) return
+            const idx = nextFrameIndex++
+            await loadFrame(idx)
+          }
+        }
+
+        // Run all workers concurrently
+        const workers = Array.from({ length: CONCURRENCY }, () => worker())
+        await Promise.all(workers)
 
         if (isCancelled) return
 
         imagesRef.current = images
         setIsLoaded(true)
         restoreScroll()
-        // Ensure a first draw before ScrollTrigger runs.
         targetFrameRef.current = 0
         drawFrame(0)
       } catch (err) {
@@ -237,7 +269,7 @@ export default function FrameAnimation({ totalFrames = 240, onComplete, onRevers
       trigger: scrollArea,
       start: 'top top',
       end: 'bottom bottom',
-      scrub: 0.5,
+      scrub: 0.25, // Snappy, ultra-smooth 60fps scrubbing
       onUpdate: (self) => {
         const progress = clamp(self.progress, 0, 1)
         const frameIndex = Math.round(progress * (totalFrames - 1))
@@ -247,7 +279,7 @@ export default function FrameAnimation({ totalFrames = 240, onComplete, onRevers
           requestDraw()
         }
 
-        const completedNow = progress > 0.98
+        const completedNow = progress > 0.95
         if (completedNow !== isCompleteRef.current) {
           isCompleteRef.current = completedNow
           if (completedNow) {
@@ -267,7 +299,7 @@ export default function FrameAnimation({ totalFrames = 240, onComplete, onRevers
         scrollTrigger: {
           trigger: scrollArea,
           start: 'top top',
-          end: 'top -900px',
+          end: 'top -350px',
           scrub: true,
         }
       })
