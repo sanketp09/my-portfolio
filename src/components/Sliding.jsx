@@ -93,15 +93,15 @@ const HACKATHONS = [
     rank: "4th Place",
     badge: "🏅",
     tier: "finalist",
-    category: "Open Innovation",
-    project: "Creative Tech Solution",
-    projectDesc: "Creative tech solution built during hackathon focusing on problem-solving and rapid prototyping.",
+    category: "Emergency & Disaster Tech",
+    project: "Autonomous Aerial Rescue Triage",
+    projectDesc: "Computer-vision aerial surveillance prototype enabling rapid victim localization and triage dispatch in devastated zones.",
     whatWeBuilt: [
-      "End-to-end Disaster Management App",
-      "Drone based tracking for victim identification and rescue",
-      "Rapid deployment under time constraints"
+      "Aerial drone telemetry integration for victim identification",
+      "Low-bandwidth coordinate broadcast pipeline for rescue units",
+      "Real-time geospatial damage heatmaps on offline tiles"
     ],
-    challenges: "Limited time, team coordination, and rapid prototyping pressure.",
+    challenges: "Processing high-res aerial frames on resource-constrained hardware while streaming live coordinates over noisy radio channels.",
     prize: "₹5,000",
     organizedBy: "PCCOE Student Branch",
     tech: ["Web", "AI", "Full Stack"],

@@ -319,8 +319,45 @@ export default function FrameAnimation({ totalFrames = 240, onComplete, onRevers
       <canvas ref={canvasRef} className="frameCanvas" />
 
       <div ref={introTextRef} className="intro-text">
-        <h1>STEP INTO OUR<br />WORLD OF CODE.</h1>
-        <p>Scroll to begin</p>
+        <h1>SANKET PATIL<br /><span style={{ fontSize: "0.5em", letterSpacing: "0.1em", fontWeight: 400, opacity: 0.9 }}>SOFTWARE & SYSTEMS ENGINEER</span></h1>
+        <p style={{ margin: "8px 0 14px", letterSpacing: "0.2em", textTransform: "uppercase", fontSize: "0.85em", opacity: 0.65 }}>
+          Scroll to explore 3D world
+        </p>
+        <button
+          type="button"
+          onClick={() => {
+            if (onComplete) onComplete();
+          }}
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 8,
+            padding: "9px 20px",
+            borderRadius: 999,
+            border: "1px solid rgba(0, 229, 255, 0.45)",
+            background: "rgba(0, 229, 255, 0.12)",
+            backdropFilter: "blur(10px)",
+            color: "#00e5ff",
+            fontFamily: "'JetBrains Mono', monospace",
+            fontSize: 11,
+            fontWeight: 700,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            cursor: "pointer",
+            transition: "all 0.2s ease",
+            pointerEvents: "auto",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = "rgba(0, 229, 255, 0.25)";
+            e.currentTarget.style.boxShadow = "0 0 20px rgba(0, 229, 255, 0.4)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = "rgba(0, 229, 255, 0.12)";
+            e.currentTarget.style.boxShadow = "none";
+          }}
+        >
+          Fast Track to Portfolio ▹
+        </button>
       </div>
 
       <div ref={scrollAreaRef} className="scrollArea" aria-hidden="true" />

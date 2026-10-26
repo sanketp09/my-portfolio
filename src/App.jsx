@@ -202,6 +202,7 @@ function ConstantNav({ onContact, onProjects, onHackathons, onResearch, onExperi
 
   const handleContact = () => {
     onContact();
+    select("sanket", { skipInfoCard: true });
   };
 
   const handleOrbital = () => {
@@ -236,12 +237,12 @@ function ConstantNav({ onContact, onProjects, onHackathons, onResearch, onExperi
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        gap: 14,
+        gap: 12,
         zIndex: 120,
         pointerEvents: "auto",
-        background: "rgba(3, 7, 18, 0.75)",
-        backdropFilter: "blur(12px)",
-        borderBottom: "1px solid rgba(255, 255, 255, 0.06)",
+        background: "rgba(3, 7, 18, 0.8)",
+        backdropFilter: "blur(14px)",
+        borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
       }}
     >
       <div
@@ -264,16 +265,49 @@ function ConstantNav({ onContact, onProjects, onHackathons, onResearch, onExperi
           color: "rgba(255,255,255,0.85)",
           textTransform: "uppercase",
         }}>
-          Portfolio
+          Sanket Patil
         </span>
       </div>
 
-      <NavButton label="Contact Us" onClick={handleContact} />
       <NavButton label="Projects" onClick={onProjects} active={isProjects} />
       <NavButton label="Hackathons" onClick={onHackathons} active={isHackathons} />
       <NavButton label="Research" onClick={onResearch} active={isResearch} />
       <NavButton label="Experience" onClick={onExperience} active={isExperience} />
-      <NavButton label="Orbital" onClick={handleOrbital} active={isOrbital} />
+      <NavButton label="3D Nexus" onClick={handleOrbital} active={isOrbital} />
+      <NavButton label="Contact" onClick={handleContact} />
+
+      <a
+        href="/resume/resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 4,
+          padding: "5px 12px",
+          borderRadius: 6,
+          background: "rgba(0, 229, 255, 0.12)",
+          border: "1px solid rgba(0, 229, 255, 0.4)",
+          color: "#00e5ff",
+          fontFamily: "'JetBrains Mono', monospace",
+          fontSize: 10.5,
+          fontWeight: 700,
+          letterSpacing: "0.1em",
+          textTransform: "uppercase",
+          textDecoration: "none",
+          transition: "all 0.2s ease",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.background = "rgba(0, 229, 255, 0.25)";
+          e.currentTarget.style.boxShadow = "0 0 12px rgba(0, 229, 255, 0.35)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.background = "rgba(0, 229, 255, 0.12)";
+          e.currentTarget.style.boxShadow = "none";
+        }}
+      >
+        Resume ↗
+      </a>
 
       <button
         type="button"

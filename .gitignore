@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Loose root PDFs
+/GRP9_CAPSTONE*.pdf
+/Semantic-Aware*.pdf

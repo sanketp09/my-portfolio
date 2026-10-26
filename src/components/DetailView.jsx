@@ -76,8 +76,8 @@ export function DetailView({ onOpenHackathons, onOpenProjects, onOpenResearch, o
   const contactLinks = useMemo(
     () => [
       { label: "LinkedIn", short: "in", href: "https://www.linkedin.com/in/sanket-patil1708/" },
-      { label: "Instagram", short: "ig", href: "https://www.instagram.com/" },
       { label: "GitHub", short: "gh", href: "https://github.com/sanketp09" },
+      { label: "Email", short: "✉", href: "mailto:sanketpatil.work@gmail.com" },
       { label: "Call", short: "☎", href: "tel:+919152030715" },
     ],
     []
@@ -859,6 +859,14 @@ function SocialIcon({ type }) {
         <path d="M6.5 6.75v.25" />
         <path d="M10 18v-4.8c0-1.7 1.1-3 2.8-3 1.7 0 2.7 1.1 2.7 3V18" />
         <rect x="4" y="4" width="16" height="16" rx="3" />
+      </svg>
+    );
+  }
+  if (type === "Email") {
+    return (
+      <svg viewBox="0 0 24 24" style={common}>
+        <rect width="20" height="16" x="2" y="4" rx="2" />
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
       </svg>
     );
   }

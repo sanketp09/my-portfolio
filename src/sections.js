@@ -2,8 +2,8 @@ export const SECTIONS = [
   {
     id: "projects",
     label: "Projects",
-    subtitle: "Selected Work",
-    year: "2024",
+    subtitle: "Featured Systems",
+    year: "2024–25",
     index: "01",
     gradient: ["#0d1f4a", "#1a3a7a"],
     accentColor: "#60a5fa",
@@ -17,16 +17,16 @@ export const SECTIONS = [
       <path d="M16 22l6 6 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>`,
     items: [
-      { name: "Portfolio 3D Engine", tech: "React Three Fiber, GSAP", desc: "Cinematic character selection scene with video platforms" },
-      { name: "AI Dashboard", tech: "Next.js, Tailwind, D3", desc: "Real-time ML pipeline visualization with live metrics" },
-      { name: "E-Commerce Platform", tech: "Node.js, PostgreSQL", desc: "Serving 2M+ users with sub-100ms response times" },
+      { name: "ResQLink", tech: "Flutter, BLE Mesh, OpenStreetMap", desc: "Offline disaster response coordination and route intelligence" },
+      { name: "Kisaan Vaani", tech: "Python, Whisper AI, FastAPI, React", desc: "Voice-first Hindi agricultural AI assistant (1st Place Winner)" },
+      { name: "ORCHESTRA", tech: "React, FastAPI, Neo4j, PostgreSQL", desc: "Enterprise procurement intelligence & living belief graph" },
     ],
   },
   {
     id: "hackathons",
     label: "Hackathons",
     subtitle: "Competition Wins",
-    year: "2023",
+    year: "2024–25",
     index: "02",
     gradient: ["#1a0d4a", "#3a1a7a"],
     accentColor: "#a78bfa",
@@ -34,16 +34,16 @@ export const SECTIONS = [
       <path d="M24 4L29 16H42L32 24L36 37L24 29L12 37L16 24L6 16H19L24 4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
     </svg>`,
     items: [
-      { name: "HackMIT 2023 — Winner", tech: "48 hrs", desc: "Built real-time disaster response coordination platform" },
-      { name: "Google Devfest — 2nd", tech: "24 hrs", desc: "AI-powered accessibility tool for visual impairment" },
-      { name: "ETHIndia — Top 10", tech: "72 hrs", desc: "Decentralized identity verification using ZK proofs" },
+      { name: "Nexothon 2025 — Winner (1st)", tech: "24 hrs · GCET Gujarat", desc: "Built Kisaan Vaani voice assistant for rural farmers" },
+      { name: "HackCelestial 2.0 — Runner-Up", tech: "24 hrs · Pillai College", desc: "Built offline humanitarian aid & emergency SOS app" },
+      { name: "Craftverse 2025 — 4th Place", tech: "24 hrs · PCCOE Pune", desc: "End-to-end rapid prototype for emergency disaster coordination" },
     ],
   },
   {
     id: "experience",
     label: "Experience",
-    subtitle: "Career Journey",
-    year: "2020–24",
+    subtitle: "Professional Journey",
+    year: "2024–25",
     index: "03",
     gradient: ["#0d2a1a", "#1a5a3a"],
     accentColor: "#34d399",
@@ -54,16 +54,16 @@ export const SECTIONS = [
       <circle cx="24" cy="26" r="3" fill="currentColor"/>
     </svg>`,
     items: [
-      { name: "Google — Software Engineer", tech: "2022–2024", desc: "Built features used by 500M+ users in Google Search" },
-      { name: "Freelance Consultant", tech: "2020–2022", desc: "Delivered 18 client projects across fintech and healthtech" },
-      { name: "Open Source Maintainer", tech: "2019–Present", desc: "4.2k GitHub stars across personal projects" },
+      { name: "Palcoa Solutions — Software Intern", tech: "Dec 2024–Apr 2025", desc: "Engineered automated OCR workflows & image processing in Python" },
+      { name: "Zemo Sports — Software Intern", tech: "May 2025–Aug 2025", desc: "High-throughput athlete biometric telemetry backend & Flutter UI" },
+      { name: "IEEE-VESIT — Technical Lead", tech: "2023–2025", desc: "Mentored 100+ students in web development and full-stack engineering" },
     ],
   },
   {
     id: "achievements",
-    label: "Achievements",
-    subtitle: "Recognition",
-    year: "2024",
+    label: "Research & Honors",
+    subtitle: "Academic Publications",
+    year: "2024–25",
     index: "04",
     gradient: ["#2a1a0d", "#5a3a1a"],
     accentColor: "#fbbf24",
@@ -74,9 +74,9 @@ export const SECTIONS = [
       <path d="M20 38v4M28 38v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
     </svg>`,
     items: [
-      { name: "Forbes 30 Under 30", tech: "Technology — 2024", desc: "Recognized for impact in developer tooling" },
-      { name: "Speaker — JSConf Asia", tech: "2023", desc: "'3D Web Experiences at Scale' — 800 attendees" },
-      { name: "AWS Hero", tech: "2023", desc: "Community recognition for cloud architecture contributions" },
+      { name: "Breast Cancer CDSS (Capstone)", tech: "2+ Years Research", desc: "Multimodal clinical report validation under Dr. Asma Parveen (VESIT)" },
+      { name: "Project Helix (Honors Thesis)", tech: "B.E. Honors with Research", desc: "Constraint-aware DNA archival & neural error reconstruction" },
+      { name: "Hackathon Champion", tech: "Multiple Wins", desc: "1st Place Nexothon, Runner-Up HackCelestial 2.0, 4th Craftverse" },
     ],
   },
   {
@@ -92,9 +92,9 @@ export const SECTIONS = [
       <path d="M4 14l20 14 20-14" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
     </svg>`,
     items: [
-      { name: "sanket@email.com", tech: "Email", desc: "Respond within 24 hours on weekdays" },
-      { name: "linkedin.com/in/sanket", tech: "LinkedIn", desc: "Connect professionally, view full career history" },
-      { name: "github.com/sanket", tech: "GitHub", desc: "Browse open source contributions and side projects" },
+      { name: "sanket.patil@email.com", tech: "Email", desc: "Direct email for recruitment, collaboration, and inquiries" },
+      { name: "linkedin.com/in/sanket-patil1708", tech: "LinkedIn", desc: "Connect professionally and view academic history" },
+      { name: "github.com/sanketp09", tech: "GitHub", desc: "Browse open-source repositories and research code" },
     ],
   },
 ];

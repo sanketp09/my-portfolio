@@ -27,8 +27,8 @@ export const PROJECTS = [
     heroSubtitle: "Disaster Response & Resilient Emergency Coordination",
     heroOverview: "ResQLink is a disaster-response concept designed to support emergency communication, situational awareness, and rescue logistics when conventional connectivity and infrastructure become unreliable.",
     coreFocus: ["Offline communication", "Emergency coordination", "Route intelligence"],
-    demoLink: "https://github.com/sanketp09/resqlink",
-    sourceLink: "https://github.com/sanketp09/resqlink",
+    demoLink: "https://github.com/ShravanyaA17/ResQLink",
+    sourceLink: "https://github.com/ShravanyaA17/ResQLink",
     description: "A disaster-response concept designed to support emergency communication, situational awareness, and rescue logistics when conventional connectivity and infrastructure become unreliable.",
     tags: [
       "Offline Communication",
@@ -43,7 +43,7 @@ export const PROJECTS = [
     titleColor: "#2D0A01",     // Dark rich chocolate
     taglineColor: "#3D0E02",
     badgeBg: "rgba(255,255,255,0.45)",
-    link: "https://github.com/sanketp09/resqlink",
+    link: "https://github.com/ShravanyaA17/ResQLink",
     problemStatement: "During disasters, damaged communication infrastructure, blocked roads, and fragmented information can delay rescue operations. Emergency teams need a way to share SOS messages, understand local conditions, and coordinate available resources despite unreliable connectivity.",
     problemAspects: [
       { title: "Severed Infrastructure", desc: "Damaged cellular towers and power grid blackouts sever conventional lines, leaving trapped civilians and rescue teams unable to coordinate." },
@@ -193,8 +193,8 @@ export const PROJECTS = [
     heroSubtitle: "AI-Driven Material Intelligence for Circular Campuses",
     heroOverview: "Helping campuses move from waste disposal to material reuse through structured material intelligence and circular-economy decision support.",
     coreFocus: ["Sustainability", "Material Reuse", "SDG 9"],
-    demoLink: "https://github.com/sanketp09/reclaim",
-    sourceLink: "https://github.com/sanketp09/reclaim",
+    demoLink: "https://github.com/Shravanya178/Reclaim_ECOM",
+    sourceLink: "https://github.com/Shravanya178/Reclaim_ECOM",
     description: "ReClaim is an AI-driven material intelligence concept designed to make materials easier to identify, evaluate, track, and reuse. It aims to connect material information with potential reuse opportunities and support more informed circular-economy decisions.",
     tags: [
       "Material Passport",
@@ -209,7 +209,7 @@ export const PROJECTS = [
     titleColor: "#062C24",     // Crisp dark pine
     taglineColor: "#0C3F35",   // Deep charcoal pine
     badgeBg: "rgba(255,255,255,0.45)",
-    link: "https://github.com/sanketp09/reclaim",
+    link: "https://github.com/Shravanya178/Reclaim_ECOM",
     problemStatement: "Campuses discard furniture, electronics, construction materials, and other resources that may still have value. Information about their condition, composition, reuse potential, and availability is often fragmented, making recovery and reuse difficult.",
     problemAspects: [
       { title: "Premature Asset Disposal", desc: "Solid timber desks, lab equipment, and architectural fixtures are sent directly to municipal landfills during building renovations." },
@@ -477,8 +477,8 @@ export const PROJECTS = [
     heroSubtitle: "Enterprise Procurement Intelligence & Living Belief Graph",
     heroOverview: "A sophisticated enterprise procurement intelligence platform that uses a living Belief Graph to reconcile vendor claims, purchase orders, compliance certificates, and contract dependencies.",
     coreFocus: ["Procurement Intelligence", "Belief Graph", "Supply Chain Verification"],
-    demoLink: "https://github.com/sanketp09",
-    sourceLink: "https://github.com/sanketp09",
+    demoLink: "https://github.com/sanketp09/orchestra",
+    sourceLink: "https://github.com/sanketp09/orchestra",
     description: "A sophisticated enterprise procurement intelligence platform that uses a living Belief Graph to reconcile vendor claims, purchase orders, compliance certificates, and contract dependencies.",
     tags: [
       "Belief Graph",
@@ -493,7 +493,7 @@ export const PROJECTS = [
     titleColor: "#451A03",     // Dark amber espresso
     taglineColor: "#78350F",
     badgeBg: "rgba(255,255,255,0.45)",
-    link: "https://github.com/sanketp09",
+    link: "https://github.com/sanketp09/orchestra",
     problemStatement: "Enterprise procurement teams process thousands of purchase orders, vendor claims, and regulatory certificates across fragmented ERP systems. Discrepancies between billed quantities, delivery manifests, and compliance standards frequently go unnoticed until audited, creating substantial financial and legal exposure.",
     problemAspects: [
       { title: "Fragmented Discrepancy Audits", desc: "Procurement records sit scattered across disparate spreadsheets, ERP databases, and email attachments with zero unified cross-referencing." },
@@ -759,19 +759,20 @@ export const PROJECTS = [
     status: "RESEARCH & PROTOTYPE",
     valueProp: "An AI-assisted healthcare project exploring breast cancer detection and treatment-related decision support using machine learning.",
     tagline: "An AI-assisted healthcare project exploring breast cancer detection and treatment-related decision support using machine learning.",
-    heroTitle: "Breast Cancer Detection & Treatment Support",
-    heroSubtitle: "AI for Earlier Insights — Clinical Decision Support",
-    heroOverview: "A machine-learning-based healthcare project designed to analyze breast cancer-related data and explore how predictive models can support clinical assessment and treatment-related information.",
-    coreFocus: ["Medical data analysis", "Classification", "Decision support"],
-    demoLink: "https://github.com/sanketp09",
-    sourceLink: "https://github.com/sanketp09",
-    description: "A machine-learning-based healthcare project designed to analyze breast cancer-related data and explore how predictive models can support clinical assessment and treatment-related information.",
+    heroTitle: "Clinical Decision Support System for Breast Cancer (Aarogya Mitra)",
+    heroSubtitle: "2+ Years Capstone Research — Multimodal Clinical NLP & Multi-Hospital Validation",
+    heroOverview: "A 2+ year Capstone research initiative (Mentored by Dr. Asma Parveen I. Siddavatam, VESIT) engineering an NLP clinical decision support system that parses heterogeneous hospital pathology templates to classify molecular subtypes (Luminal A/B, HER2+, TNBC) against oncological guidelines.",
+    coreFocus: ["Multi-Hospital Pathology Ingestion", "Clinical NLP", "IHC Receptor Profiling", "Decision Support"],
+    demoLink: "/papers/breast-cancer-research.pdf",
+    sourceLink: "https://github.com/sanketp09/Aarogya-mitra",
+    description: "A 2+ year Capstone healthcare research project engineered to ingest and analyze multi-hospital breast cancer diagnostic reports, extracting biomarker profiles and delivering guideline-backed clinical decision support.",
     tags: [
-      "Breast Cancer Detection",
-      "Machine Learning",
-      "Healthcare AI",
+      "2+ Years Capstone",
+      "Multi-Hospital Validation",
+      "Clinical NLP & CDSS",
+      "Biomarker Extraction",
     ],
-    tech: ["Python", "scikit-learn", "BioBERT", "FastAPI", "React / Next.js"],
+    tech: ["Python", "ClinicalBERT", "scikit-learn", "FastAPI", "React / Next.js"],
     actionText: "Explore Project ↗",
     cardBg: "#F6A5B5",         // Soft Rose Blush from palette
     accentColor: "#831843",     // Deep rich cranberry
@@ -779,7 +780,7 @@ export const PROJECTS = [
     titleColor: "#4C0519",     // Darkest rich burgundy
     taglineColor: "#5E0B24",
     badgeBg: "rgba(255,255,255,0.45)",
-    link: "https://github.com/sanketp09",
+    link: "https://github.com/sanketp09/Aarogya-mitra",
     problemStatement: "Breast cancer assessment can involve analyzing clinical measurements, imaging findings, and other patient data. Machine learning can help identify patterns in datasets, but reliable diagnosis requires clinical expertise, validated models, and appropriate medical testing.",
     problemAspects: [
       { title: "Multimodal Data Heterogeneity", desc: "Patient data spans disparate clinical pathology reports, tumor staging (TNM), receptor statuses (ER/PR/HER2), and imaging findings that are difficult to synthesize rapidly." },
@@ -881,33 +882,33 @@ export const PROJECTS = [
       { label: "Subtypes", val: "4 Classes", sub: "Luminal A/B, HER2, TNBC" },
       { label: "Framework", val: "CDSS AI", sub: "Clinical Decision Support System" }
     ],
-    nextProject: { id: 7, title: "Interview Ace Pro", valueProp: "An AI-powered interview preparation platform designed to help candidates practise interviews, improve their answers, and build confidence." }
+    nextProject: { id: 7, title: "Tournament Fixture Generator", valueProp: "Constraint-driven tournament fixture scheduler generating round-robin and knockout pairings with zero venue conflicts." }
   },
   {
     id: 7,
-    title: "Interview Ace Pro",
-    category: "CAREER TECH · AI INTERVIEW PREPARATION",
-    categoryYear: "CAREER TECH · GEN AI · 2025",
+    title: "Tournament Fixture Generator",
+    category: "ALGORITHMS · SPORTS TECH · AUTOMATION",
+    categoryYear: "SPORTS TECH · SCHEDULING ALGORITHMS · 2024",
     projectNumber: "07 / PROJECTS",
-    subtitle: "CAREER TECH · AI INTERVIEW PREPARATION",
-    year: "2025",
-    role: "Full-Stack AI Engineer",
-    status: "PROTOTYPED PLATFORM",
-    valueProp: "An AI-powered interview preparation platform designed to help candidates practise interviews, improve their answers, and build confidence before the real thing.",
-    tagline: "An AI-powered interview preparation platform designed to help candidates practise interviews, improve their answers, and build confidence before the real thing.",
-    heroTitle: "Interview Ace Pro",
-    heroSubtitle: "Practise Smarter. Interview Better. — AI Career Preparation",
-    heroOverview: "A career-preparation platform concept that uses AI to make interview practice more accessible, structured, and personalized.",
-    coreFocus: ["Generative AI", "Interview simulation", "Personalized feedback"],
-    demoLink: "https://github.com/sanketp09",
-    sourceLink: "https://github.com/sanketp09",
-    description: "A career-preparation platform concept that uses AI to make interview practice more accessible, structured, and personalized.",
+    subtitle: "ALGORITHMS · SPORTS SCHEDULING ENGINE",
+    year: "2024",
+    role: "Core Algorithm & Systems Developer",
+    status: "WORKING SYSTEM",
+    valueProp: "Constraint-driven tournament fixture scheduler generating round-robin and knockout pairings with zero venue conflicts.",
+    tagline: "Constraint-driven tournament fixture scheduler generating round-robin and knockout pairings with zero venue conflicts.",
+    heroTitle: "Tournament Fixture Generator",
+    heroSubtitle: "Algorithmic Match Scheduling & Conflict-Free Fixture Engine",
+    heroOverview: "An algorithmic sports scheduling system that automates tournament fixture generation across round-robin, knockout, and group-stage formats, enforcing strict venue availability, rest-window fairness, and zero-conflict constraints.",
+    coreFocus: ["Combinatorial Optimization", "Fair Rest Intervals", "Zero-Conflict Scheduling"],
+    demoLink: "https://github.com/sanketp09/fixture-generator",
+    sourceLink: "https://github.com/sanketp09/fixture-generator",
+    description: "An algorithmic sports scheduling system that automates tournament fixture generation across round-robin, knockout, and group-stage formats, enforcing strict venue availability, rest-window fairness, and zero-conflict constraints.",
     tags: [
-      "AI Interview Practice",
-      "Answer Feedback",
-      "Career Readiness",
+      "Scheduling Algorithms",
+      "Round-Robin & Knockouts",
+      "Constraint Optimization",
     ],
-    tech: ["React", "FastAPI", "LangChain", "OpenAI / Claude", "Whisper STT"],
+    tech: ["Python", "Combinatorics", "Graph Theory", "Data Structures"],
     actionText: "Explore Project ↗",
     cardBg: "#7DD3FC",         // Soft Sky Blue from palette
     accentColor: "#0369A1",     // Deep ocean blue
@@ -915,7 +916,7 @@ export const PROJECTS = [
     titleColor: "#082F49",     // Dark navy slate
     taglineColor: "#0C4A6E",
     badgeBg: "rgba(255,255,255,0.45)",
-    link: "https://github.com/sanketp09",
+    link: "https://github.com/sanketp09/fixture-generator",
     problemStatement: "Candidates often struggle to prepare for interviews because they lack realistic practice, structured feedback, and a clear understanding of how to improve their answers. Access to personalized interview coaching can also be expensive or limited.",
     problemAspects: [
       { title: "Generic Question Banks", desc: "Traditional prep platforms provide static lists of interview questions without interactive follow-ups tailored to candidate responses." },
@@ -1017,33 +1018,33 @@ export const PROJECTS = [
       { label: "Question Types", val: "Tech & Behavioral", sub: "Role-adaptive scenarios" },
       { label: "Framework", val: "STAR Model", sub: "Structured answer coaching" }
     ],
-    nextProject: { id: 8, title: "Machine Reading OCR System", valueProp: "An automated computer-vision system that extracts numerical readings from machine images, reducing manual data entry." }
+    nextProject: { id: 8, title: "Cafe Management & POS Platform", valueProp: "A modern Cafe & Restaurant Point of Sale (POS) system automating order lifecycles, billing, inventory, and table analytics." }
   },
   {
     id: 8,
-    title: "Machine Reading OCR System",
-    category: "COMPUTER VISION · INDUSTRIAL AUTOMATION",
-    categoryYear: "COMPUTER VISION · OCR · 2025",
+    title: "Cafe Management & POS Platform",
+    category: "FULL-STACK · POINT-OF-SALE & INVENTORY",
+    categoryYear: "FULL-STACK · RETAIL AUTOMATION · 2024",
     projectNumber: "08 / PROJECTS",
-    subtitle: "COMPUTER VISION · INDUSTRIAL AUTOMATION",
-    year: "2025",
-    role: "Computer Vision & Automation Engineer",
+    subtitle: "FULL-STACK · RESTAURANT AUTOMATION",
+    year: "2024",
+    role: "Full-Stack Software Engineer",
     status: "WORKING SYSTEM",
-    valueProp: "An automated computer-vision system that extracts numerical readings from machine images, reducing the need for manual reading and data entry.",
-    tagline: "An automated computer-vision system that extracts numerical readings from machine images, reducing the need for manual reading and data entry.",
-    heroTitle: "Machine Reading OCR System",
-    heroSubtitle: "Turning Visual Readings into Digital Data — Industrial Automation",
-    heroOverview: "A computer-vision project that processes images of machine readings and applies optical character recognition to extract readable numerical information automatically.",
-    coreFocus: ["Image preprocessing", "Text extraction", "Industrial data automation"],
-    demoLink: "https://github.com/sanketp09",
-    sourceLink: "https://github.com/sanketp09",
-    description: "A computer-vision project that processes images of machine readings and applies optical character recognition to extract readable numerical information automatically.",
+    valueProp: "A modern Cafe & Restaurant Point of Sale (POS) system automating order lifecycles, billing, inventory, and table analytics.",
+    tagline: "A modern Cafe & Restaurant Point of Sale (POS) system automating order lifecycles, billing, inventory, and table analytics.",
+    heroTitle: "Cafe Management & POS Platform",
+    heroSubtitle: "Modern Point-of-Sale, Order Orchestration & Inventory Ledger",
+    heroOverview: "An end-to-end cafe operations management platform engineered for fast-paced retail food environments. Features digital table order dispatch, dynamic inventory ledger tracking, split-bill invoicing, and live daily sales analytics.",
+    coreFocus: ["Order Lifecycle Dispatch", "Real-Time Inventory Ledger", "Billing Automation"],
+    demoLink: "https://github.com/sanketp09/cafe",
+    sourceLink: "https://github.com/sanketp09/cafe",
+    description: "An end-to-end cafe operations management platform engineered for fast-paced retail food environments. Features digital table order dispatch, dynamic inventory ledger tracking, split-bill invoicing, and live daily sales analytics.",
     tags: [
-      "OpenCV",
-      "OCR Automation",
-      "Python",
+      "POS Billing Engine",
+      "Table Order Workflow",
+      "Inventory Management",
     ],
-    tech: ["Python", "OpenCV", "Pytesseract", "NumPy", "Matplotlib"],
+    tech: ["JavaScript / React", "Node.js", "Express", "MongoDB / SQL", "CSS"],
     actionText: "Explore Project ↗",
     cardBg: "#D3F6A5",         // Fresh Lime from palette
     accentColor: "#3F6E13",     // Deep forest olive
@@ -1051,7 +1052,7 @@ export const PROJECTS = [
     titleColor: "#1E3B04",     // Dark forest green
     taglineColor: "#2A4F08",
     badgeBg: "rgba(255,255,255,0.45)",
-    link: "https://github.com/sanketp09",
+    link: "https://github.com/sanketp09/cafe",
     problemStatement: "Reading measurements from physical machine displays, meters, or instruments manually can be time-consuming and prone to transcription errors. Converting those readings into digital records becomes difficult when many images must be processed.",
     problemAspects: [
       { title: "Manual Transcription Overhead", desc: "Operators in industrial plants spend significant time manually logging gauge dials and digital display readings into spreadsheets." },

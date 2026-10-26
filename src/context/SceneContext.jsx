@@ -14,7 +14,7 @@ export const AVATARS = {
     data: {
       about:        "B.E. IT student focused on full-stack development, AI/ML, and automation-driven applications.",
       strengths:    ["Full-Stack Development", "AI/ML Integration", "Automation Workflows", "Team Leadership"],
-      weaknesses:   [""],
+      weaknesses:   ["Deep-diving into micro-optimizations", "Tendency to obsess over animation frame budgets"],
       projects:     [
         {
           id: "kisaan-vaani",
@@ -29,8 +29,7 @@ export const AVATARS = {
           desc: "Empowering rural farmers with voice-driven Hindi conversational AI, crop yield forecasting, and government subsidies.",
           tech: ["Python", "NLP", "Whisper AI", "FastAPI", "React"],
           buttons: [
-            { label: "Live Demo", url: "https://github.com/sanketp09" },
-            { label: "Source Code", url: "https://github.com/sanketp09" },
+            { label: "Source Code", url: "https://github.com/sanketp09/mad_kisaanvaani" },
           ],
           whatItDoes: "An end-to-end conversational AI platform built in Hindi that allows farmers to speak naturally, ask questions about weather, crop diseases, and fertilizer requirements, and receive real-time voice and visual guidance.",
           howItWorks: [
@@ -135,8 +134,14 @@ export const AVATARS = {
         }
       ],
       experience:   ["Software Intern — Palcoa Solutions (Dec 2024–Apr 2025)", "Software Intern — Zemo Sports Reconnect (May 2025–Aug 2025)"],
-      achievements: ["Winner — Nexothon 2025 (GCET Gujarat)", "2nd Place — HackCelestial 2.0", "4th Place — Craftverse 2025", "Finalist — HackOrbit 2025"],
-      education:    ["B.E. Information Technology — VESIT, Mumbai", "HSC (Science) — K.J. Somaiya College", "SSC — Vani Vidyalaya"],
+      achievements: [
+        "Winner — Nexothon 2025 (GCET Gujarat)",
+        "Runner-Up — HackCelestial 2.0 (PCE Panvel)",
+        "4th Place — Craftverse 2025 (PCCOE Pune)",
+        "Capstone Lead — 2+ Years Clinical CDSS Research (VESIT)",
+        "Thesis — B.E. Honors with Research on DNA Data Archival"
+      ],
+      education:    ["B.E. Information Technology (Honors with Research) — VESIT, Mumbai", "HSC (Science) — K.J. Somaiya College", "SSC — Vani Vidyalaya"],
       skills:       ["Python", "Java", "JavaScript", "MERN Stack", "Flutter", "Machine Learning", "OpenCV", "n8n"],
     },
   },

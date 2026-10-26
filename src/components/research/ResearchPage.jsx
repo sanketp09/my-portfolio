@@ -1002,30 +1002,52 @@ export default function ResearchPage({ onBack }) {
                     left: "50%",
                     transform: "translateX(-50%)",
                     background: "rgba(5, 8, 17, 0.94)",
-                    border: "1px solid rgba(255, 255, 255, 0.12)",
-                    padding: "10px 20px",
-                    borderRadius: 8,
+                    border: "1px solid rgba(255, 255, 255, 0.16)",
+                    boxShadow: "0 8px 32px rgba(0,0,0,0.6)",
+                    padding: "8px 20px",
+                    borderRadius: 999,
                     display: "flex",
                     alignItems: "center",
-                    gap: 12,
+                    gap: 14,
                     fontFamily: "'JetBrains Mono', monospace",
                     fontSize: 11,
                     letterSpacing: "0.06em",
-                    color: "rgba(255, 255, 255, 0.75)",
+                    color: "rgba(255, 255, 255, 0.8)",
                     zIndex: 20,
                   }}
                 >
-                  <span>File: <code style={{ color: activeProject.accentColor }}>{activeProject.paper.fileName}</code></span>
-                  <span>|</span>
-                  <label style={{ color: activeProject.accentColor, cursor: "pointer", textDecoration: "underline" }}>
-                    Select PDF from device
-                    <input
-                      type="file"
-                      accept=".pdf"
-                      style={{ display: "none" }}
-                      onChange={(e) => handlePdfUpload(e, activeProject.id)}
-                    />
-                  </label>
+                  <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+                    <span style={{ width: 6, height: 6, borderRadius: "50%", background: activeProject.accentColor }} />
+                    <code style={{ color: "#ffffff" }}>{activeProject.paper.fileName}</code>
+                  </span>
+                  <span style={{ color: "rgba(255,255,255,0.25)" }}>|</span>
+                  <a
+                    href={currentPdfUrl}
+                    download={activeProject.paper.fileName}
+                    style={{
+                      color: activeProject.accentColor,
+                      textDecoration: "none",
+                      fontWeight: 700,
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 4,
+                    }}
+                  >
+                    ⬇ Download PDF
+                  </a>
+                  <span style={{ color: "rgba(255,255,255,0.25)" }}>|</span>
+                  <a
+                    href={currentPdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: "rgba(255,255,255,0.85)",
+                      textDecoration: "none",
+                      fontWeight: 600,
+                    }}
+                  >
+                    Fullscreen ↗
+                  </a>
                 </div>
               </div>
             </motion.div>
