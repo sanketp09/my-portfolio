@@ -224,8 +224,8 @@ export function DetailView({ onOpenHackathons, onOpenProjects, onOpenResearch, o
         <div
           style={{
             position: "absolute",
-            width: "clamp(280px, 26vw, 330px)",
-            height: "clamp(280px, 26vw, 330px)",
+            width: "clamp(330px, 31vw, 390px)",
+            height: "clamp(330px, 31vw, 390px)",
             borderRadius: "50%",
             border: `2px solid ${avatar.accent}55`,
             boxShadow: `0 0 45px ${avatar.accent}33, inset 0 0 30px ${avatar.accent}22`,
@@ -238,12 +238,12 @@ export function DetailView({ onOpenHackathons, onOpenProjects, onOpenResearch, o
           }}
         />
 
-        {/* Sanket's Cutout Photo (Same dimensions as in Meet the Developer) */}
+        {/* Sanket's Cutout Photo */}
         <div
           style={{
             position: "relative",
-            width: "clamp(250px, 24vw, 290px)",
-            height: "clamp(300px, 34vh, 340px)",
+            width: "clamp(295px, 28vw, 350px)",
+            height: "clamp(350px, 39vh, 410px)",
             display: "flex",
             alignItems: "flex-end",
             justifyContent: "center",

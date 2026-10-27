@@ -351,9 +351,12 @@ export default function FrameAnimation({ totalFrames = 240, onComplete, onRevers
       <canvas ref={canvasRef} className="frameCanvas" />
 
       <div ref={introTextRef} className="intro-text">
-        <h1>SANKET PATIL<br /><span style={{ fontSize: "0.5em", letterSpacing: "0.1em", fontWeight: 400, opacity: 0.9 }}>SOFTWARE & SYSTEMS ENGINEER</span></h1>
-        <p style={{ margin: "8px 0 14px", letterSpacing: "0.2em", textTransform: "uppercase", fontSize: "0.85em", opacity: 0.65 }}>
-          Scroll to explore 3D world
+        <h1>STEP INTO MY<br />WORLD OF CODE.</h1>
+        <p style={{ margin: "8px 0 14px", letterSpacing: "0.22em", textTransform: "uppercase", fontSize: "1rem", opacity: 0.85 }}>
+          Sanket Patil — Software & Systems Engineer
+        </p>
+        <p style={{ margin: "0 0 16px", letterSpacing: "0.28em", textTransform: "uppercase", fontSize: "0.8rem", opacity: 0.55 }}>
+          Scroll to begin
         </p>
         <button
           type="button"

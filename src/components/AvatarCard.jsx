@@ -37,7 +37,7 @@ export function AvatarCard({ avatar }) {
         }
       }}
     >
-      <div style={{ flex: 1, minHeight: 0, display: "flex", borderBottom: "1px solid var(--border)" }}>
+      <div style={{ flex: 1, minHeight: 0, display: "flex", borderBottom: "1px solid var(--border)", overflow: "hidden" }}>
         <motion.img
           layoutId={`photo-${avatar.id}`}
           src={avatar.photo}
@@ -46,6 +46,7 @@ export function AvatarCard({ avatar }) {
             height: "100%",
             objectFit: "contain",
             objectPosition: "center",
+            transform: "scale(1.2)",
           }} 
         />
       </div>
